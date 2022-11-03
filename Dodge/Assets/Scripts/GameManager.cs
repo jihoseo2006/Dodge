@@ -10,12 +10,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public GameObject gameoverText;
     [SerializeField]
-    public Text timeText,recordText;
-
+    public Text timeText,recordText,HpText;
+    
     private float surviveTime;
     private bool isGameover;
     void Start()
     {
+        Player.Hp = 5;
         surviveTime = 0;
         isGameover = false;
     }
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
         {
             surviveTime += Time.deltaTime;
             timeText.text = "Time : " + (int)surviveTime;
+            HpText.text = "HP : " + Player.Hp;
         }
         else
         {

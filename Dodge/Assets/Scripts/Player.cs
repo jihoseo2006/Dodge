@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     private Rigidbody playerRigidbody; // 이동시 사용하는 리지드바디 컴포넌트
     public float Movespeed = 12f;
+    public static float Hp = 5;
     
     void Start()
     {

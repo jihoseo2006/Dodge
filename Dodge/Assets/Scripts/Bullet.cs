@@ -14,20 +14,22 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, 3f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     private void OnTriggerEnter(Collider other)//충돌 시
     {
         if (other.tag == "Player")//충돌한 녀석의 태그가 Player 인가?
         {
-            Player playerCondition = other.GetComponent<Player>();// 플레이어 컴포넌트 가져오기
+            Player playerCondition = other.GetComponent<Player>(); // 플레이어 컴포넌트 가져오기
             if (playerCondition != null)//상대로부터 플레이어 컴포넌트를 가져왔다면
             {
-                playerCondition.Die(); //플레이어의 Die 함수 실행
+                Player.Hp -= 1;
+                if (Player.Hp == 0)
+                {
+                    playerCondition.Die();
+                }
+
+                //플레이어의 Die 함수 실행
             }
         }
     }
