@@ -23,6 +23,7 @@ public class Bullet : MonoBehaviour
             Player playerCondition = other.GetComponent<Player>(); //플레이어 컴포넌트를 playerCondition에 가져오기
             if (playerCondition != null)//상대로부터 플레이어 컴포넌트를 가져왔다면
             {
+                Destroy(gameObject);//플레이어와 충돌시 총알삭제
                 Player.Hp -= 1;//플레이어 Hp 감소
                 if (Player.Hp == 0)//플레이어 Hp가 0이라면
                 {

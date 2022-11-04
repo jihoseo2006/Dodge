@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         if (!isGameover) //isGameover = false (게임 진행중)일때
         {
             surviveTime += Time.deltaTime;
-            timeText.text = $"Time : {surviveTime}";
+            timeText.text = $"Time : {surviveTime:F1}";
             HpText.text = $"HP : {Player.Hp}";
         }
         else //isGameover = true (게임 오버 상황)일때
@@ -55,6 +55,6 @@ public class GameManager : MonoBehaviour
         }
 
         //최고 기록을 recordText 텍스트 컴포넌트를 이용해 표시
-        recordText.text = $"Best Time : {bestTime}";
+        recordText.text = $"Best Time : {bestTime:F1}";
     }
 }
